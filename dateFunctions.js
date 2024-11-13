@@ -5,7 +5,13 @@
 // map through each array index and calculate the number of days since each date. Use `Date` objects, subtraction for
 // date difference, and `Math.floor` to round to whole days.
 function calculateDaysSince(datesArray) {
-    
+    const todaysDate = new Date();
+   return datesArray.map(({startDate}) => {
+        const testDate = new Date(startDate);
+        const daysSinceTestDate = Math.floor((todaysDate - testDate) / (1000 * 60 * 60 * 24));
+        if (isNaN(testDate)) return NaN;
+       return daysSinceTestDate;
+   });
 }
 
 // Challenge 2: Filter Recent Dates
@@ -88,26 +94,25 @@ function getDayOfWeekForDates(datesArray) {
 
 module.exports = {
     calculateDaysSince,
-    filterRecentDates,
-    getMonthNames,
-    sortDatesAscending,
-    calculateAges,
-    groupDatesByYear,
-    findFirstMonday,
-    checkLeapYears,
-    addDaysToDates,
-    getDayOfWeekForDates,
-    findMostRecentDate,
-    getLastDayOfMonth,
-    calculateDuration,
-    listDatesOfWeekdayInMonth,
-    getDateDifferences
+//     // filterRecentDates,
+//     // getMonthNames,
+//     // sortDatesAscending,
+//     // calculateAges,
+//     // groupDatesByYear,
+//     // findFirstMonday,
+//     // checkLeapYears,
+//     // addDaysToDates,
+//     // getDayOfWeekForDates,
+//     // findMostRecentDate,
+//     // getLastDayOfMonth,
+//     // calculateDuration,
+//     // listDatesOfWeekdayInMonth,
+//     // getDateDifferences
 }
 
 
   
  
-  
   
   
 
